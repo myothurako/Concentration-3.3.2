@@ -23,7 +23,24 @@ public class Board
   {
    
     /* your code here */ 
+    int i = 0;
+    for (int r = 0; r < gameboard.length; r++)
+    {
+        for (int c = 0; c < gameboard[r].length; c++) 
+        {
+        gameboard[r][c] = new Tile(tileValues[i]);
+        i++;
+        }
+    }
 
+
+    // Used for testing only
+    for (int r = 0; r < gameboard.length; r++) {
+        for (int c = 0; c < gameboard[r].length; c++) {
+            System.out.print(gameboard[r][c] + " ");
+        }
+        System.out.println();
+    }
   }
 
  /** 
