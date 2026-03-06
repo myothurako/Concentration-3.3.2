@@ -35,14 +35,13 @@ public class Board
 
 
     // Used for testing only
-    for (int r = 0; r < gameboard.length; r++) {
-        for (int c = 0; c < gameboard[r].length; c++) {
-            System.out.print(gameboard[r][c] + " ");
-        }
-        System.out.println();
-    }
-  }
-
+    // for (int r = 0; r < gameboard.length; r++) {
+    //     for (int c = 0; c < gameboard[r].length; c++) {
+    //         System.out.print(gameboard[r][c] + " ");
+    //     }
+    //     System.out.println();
+    // }
+   }
  /** 
    * Returns a string representation of the board, getting the state of
    * each tile. If the tile is showing, displays its value, 
@@ -54,10 +53,20 @@ public class Board
    */
   public String toString()
   {
- 
-    /* your code here */
- 
-    return "";
+ /* your code here */
+    String result = "";
+    for (Tile[] row : gameboard)
+    {
+        for (Tile tile : row)
+        {
+             if (tile.isShowingValue())
+                result += tile.getValue() + "\t";
+            else
+                result += tile.getHidden() + "\t";
+        }
+        result += "\n";
+    }
+    return result;
   }
 
   /** 
